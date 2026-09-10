@@ -37,7 +37,8 @@ body{
   margin:0;
   background:var(--bg);
   color:var(--ink);
-  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-family:"Switzer",-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;
+  font-feature-settings:"ss01","cv01";
   font-weight:400;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
@@ -48,7 +49,9 @@ body{
 img{ max-width:100%; display:block; }
 a{ color:inherit; }
 
-.serif{ font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-style:italic; }
+.display,.hero h1,.card h2,.card h3,.big-text,.big{
+  font-family:"Satoshi",-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
+}
 
 /* ── ambient glow so pure black isn't flat ─────────────────── */
 body::before{
@@ -150,7 +153,7 @@ body::before{
   color:var(--ink-faint);
 }
 .hero h1{
-  margin:0; font-weight:300; letter-spacing:-.03em; line-height:.92;
+  margin:0; font-weight:300; letter-spacing:-.04em; line-height:.9;
   font-size:clamp(3.2rem, 12vw, 7.5rem);
 }
 .hero h1 .surname{ display:inline-block; font-size:1.1em; letter-spacing:-.035em; color:var(--ink); }
@@ -221,7 +224,7 @@ body::before{
   background:rgba(255,255,255,.06);
 }
 @media (prefers-reduced-motion: reduce){ .card:hover{ transform:none; } }
-.card h2{ margin:.2rem 0 .8rem; font-weight:400; letter-spacing:-.02em; font-size:clamp(1.6rem,4vw,2.3rem); }
+.card h2{ margin:.2rem 0 .8rem; font-weight:400; letter-spacing:-.025em; letter-spacing:-.02em; font-size:clamp(1.6rem,4vw,2.3rem); }
 .card h3{ margin:.2rem 0 .7rem; font-weight:500; letter-spacing:-.01em; font-size:1.22rem; }
 .card p{ margin:0 0 .9rem; color:var(--ink-dim); max-width:64ch; }
 .card p:last-child{ margin-bottom:0; }
@@ -279,7 +282,7 @@ body::before{
 
 /* ── contact ───────────────────────────────────────────────── */
 .contact{ padding-bottom:clamp(4rem,10vh,7rem); }
-.big{ font-size:clamp(2.6rem,9vw,5rem); margin:.2rem 0 2rem; line-height:1; }
+.big{ font-size:clamp(2.6rem,9vw,5rem); margin:.2rem 0 2rem; line-height:1; font-weight:300; letter-spacing:-.03em; }
 .contact-links{ display:flex; flex-wrap:wrap; gap:.6rem; }
 .contact-links a{
   padding:.7rem 1.2rem; border-radius:999px; font-size:.9rem;
