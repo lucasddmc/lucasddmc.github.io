@@ -14,18 +14,23 @@
     }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 
-    // the veil rises over the fixed photo, matching the CSS timeline
+  }
+
+  // The veil rides the scroll for every browser. CSS scroll timelines measure
+  // progress against the whole document, so a viewport-sized range does not
+  // survive the remap; this does.
+  if (!reduced) {
     var veil = document.querySelector('.hero-veil');
     var hint = document.querySelector('.scroll-hint');
     if (veil) {
-      var onScroll = function () {
-        var p = Math.min(1, window.scrollY / (window.innerHeight * 0.88));
+      var apply = function () {
+        var p = Math.min(1, Math.max(0, window.scrollY / (window.innerHeight * 0.88)));
         veil.style.transform = 'translateY(' + (100 - p * 100) + '%)';
         if (hint) hint.style.opacity = String(Math.max(0, 1 - p * 2.5));
       };
-      addEventListener('scroll', onScroll, { passive: true });
-      addEventListener('resize', onScroll, { passive: true });
-      onScroll();
+      addEventListener('scroll', apply, { passive: true });
+      addEventListener('resize', apply, { passive: true });
+      apply();
     }
   }
 

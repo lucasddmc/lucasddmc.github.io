@@ -132,11 +132,8 @@ body::before{
       rgba(0,0,0,.94) 64%, rgba(0,0,0,.72) 76%,
       rgba(0,0,0,.34) 88%, rgba(0,0,0,0) 100%);
   transform:translateY(100%);
-  animation:veilUp linear both;
-  animation-timeline:scroll(root block);
-  animation-range:0 88vh;
+  will-change:transform;
 }
-@keyframes veilUp{ to{ transform:translateY(0); } }
 
 @keyframes heroOut{ to{ opacity:0; } }
 .hero-media img{
