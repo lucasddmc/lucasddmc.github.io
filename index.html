@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://api.fontshare.com">
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f%5B%5D=satoshi@300,400,500,700&f%5B%5D=switzer@300,400,500&display=swap">
-<link rel="stylesheet" href="styles.css?v=20261114">
+<link rel="stylesheet" href="styles.css?v=20261115">
 </head>
 <body>
 
@@ -165,42 +165,31 @@
       </figure>
     </article>
 
-    <!-- ViTViz -->
+    <!-- Projeto em revisão duplo-cega: o conteúdo sai do HTML até o resultado -->
     <article class="card glass reveal feature">
       <div class="card-copy">
-        <p class="tag"><span lang="pt-BR">Ferramenta de pesquisa · no ar</span><span lang="en">Research tool · live</span></p>
-        <h2>ViTViz</h2>
+        <p class="tag"><span lang="pt-BR">Pesquisa · em revisão</span><span lang="en">Research · under review</span></p>
+        <h2><span lang="pt-BR">Oculto durante a revisão</span><span lang="en">Hidden during review</span></h2>
         <p>
           <span lang="pt-BR">
-            Envie uma imagem, escolha um Vision Transformer e veja a atenção dele se mover
-            enquanto um ataque adversarial roda. Attention rollout, mais visões por camada e
-            por cabeça. Cinco ataques (FGSM, PGD, MIM, TGR, SAGA), mostrados iteração por
-            iteração, em seis arquiteturas pré-treinadas ou com os seus próprios pesos.
+            Um artigo sobre este projeto está em revisão duplo-cega, em que quem avalia não
+            pode saber quem escreveu. Por isso ele fica fora do ar por enquanto e volta assim
+            que a revisão terminar.
           </span>
           <span lang="en">
-            Upload an image, pick a Vision Transformer, and watch its attention move
-            while an adversarial attack runs. Attention rollout plus per-layer and
-            per-head views. Five attack methods (FGSM, PGD, MIM, TGR, SAGA), shown
-            iteration by iteration, across six pretrained architectures or your own
-            weights.
+            A paper on this project is under double-blind review, where reviewers must not
+            know who wrote it. So it stays offline for now and comes back as soon as the
+            review is over.
           </span>
         </p>
-        <p class="muted">
-          <span lang="pt-BR">
-            As pessoas acreditam na fragilidade adversarial quando fazem um modelo errar com
-            a própria foto. Um slide nunca consegue isso.
-          </span>
-          <span lang="en">
-            People believe adversarial fragility when they make a model fail on their
-            own photo. A slide never does that.
-          </span>
-        </p>
-        <a class="link" href="https://huggingface.co/spaces/lucasddmc/ViTViz" target="_blank" rel="noopener"><span lang="pt-BR">Abrir o Space ↗</span><span lang="en">Open the Space ↗</span></a>
       </div>
-      <figure class="card-figure">
-        <img class="invertible" src="assets/magnitude_redistribution.png" alt="Atenção limpa, atenção sob ataque e a diferença com sinal entre as duas, num Vision Transformer" data-en-alt="Clean attention, adversarial attention, and their signed difference across a Vision Transformer">
-        <figcaption><span lang="pt-BR">Redistribuição de magnitude: o mesmo agrupamento espacial, com as amplitudes permutadas.</span><span lang="en">Magnitude redistribution: same spatial cluster, permuted amplitudes.</span></figcaption>
-      </figure>
+      <div class="mask">
+        <div class="mask-lines" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <p class="mask-label">
+          <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M5 7V5a3 3 0 0 1 6 0v2h.5A1.5 1.5 0 0 1 13 8.5v5A1.5 1.5 0 0 1 11.5 15h-7A1.5 1.5 0 0 1 3 13.5v-5A1.5 1.5 0 0 1 4.5 7H5Zm1.5 0h3V5a1.5 1.5 0 0 0-3 0v2Z"/></svg>
+          <span lang="pt-BR">Em revisão</span><span lang="en">Under review</span>
+        </p>
+      </div>
     </article>
 
     <div class="grid">
@@ -395,7 +384,7 @@
         </span>
       </p>
       <ul class="list">
-        <li><span lang="pt-BR"><strong>Atenção sob ataque.</strong> Como a atenção de Vision Transformers se redistribui sob perturbação adversarial, com o Instituto Serrapilheira. Artigo em revisão.</span><span lang="en"><strong>Attention under attack.</strong> How Vision Transformer attention redistributes under adversarial perturbation, with the Serrapilheira Institute. Paper under review.</span></li>
+        <li><span lang="pt-BR"><strong>Em revisão.</strong> Um artigo em revisão duplo-cega. Os detalhes voltam aqui quando a revisão terminar.</span><span lang="en"><strong>Under review.</strong> A paper under double-blind review. Details return here once the review is over.</span></li>
         <li><span lang="pt-BR"><strong>Ataques mais baratos a texto.</strong> Ataques caixa-preta a classificadores de texto que precisam de menos consultas.</span><span lang="en"><strong>Cheaper attacks on text.</strong> Work on black-box attacks against text classifiers that need fewer queries.</span></li>
       </ul>
     </div>
@@ -448,6 +437,6 @@
   <span id="year"></span>
 </footer>
 
-<script src="main.js?v=20261114" defer></script>
+<script src="main.js?v=20261115" defer></script>
 </body>
 </html>
