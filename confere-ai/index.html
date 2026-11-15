@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt" data-title-en="Confere Aí · Lucas Carvalho" data-desc-en="A second opinion on scams for people over 60 in Recife: an LLM pipeline with guardrails, a pre-registered evaluation and a live demo. Research prototype.">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){var d=document.documentElement,l=null;d.classList.add('js');try{var q=new URLSearchParams(location.search).get('lang');if(q==='en'||q==='pt'){l=q;try{localStorage.setItem('lang',q);}catch(e){}}else{l=localStorage.getItem('lang');}}catch(e){}if(l==='en'){d.setAttribute('data-lang','en');d.lang='en';}})();</script>
+<title>Confere Aí · Lucas Carvalho</title>
+<meta name="description" content="Uma segunda opinião sobre golpes para pessoas com mais de 60 anos no Recife: um pipeline de LLM com proteções, uma avaliação pré-registrada e uma demonstração ao vivo. Protótipo de pesquisa.">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Confere Aí">
+<meta property="og:description" content="Um pipeline de LLM que dá a pessoas idosas uma segunda opinião sobre golpes. Protótipo de pesquisa.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f%5B%5D=satoshi@300,400,500,700&f%5B%5D=switzer@300,400,500&display=swap">
+<link rel="stylesheet" href="../styles.css?v=20261114">
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"></div>
+
+<nav class="nav glass" aria-label="Principal" data-en-aria-label="Primary">
+  <a class="nav-mark" href="../">LC</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../#work"><span lang="pt-BR">Projetos</span><span lang="en">Work</span></a>
+      <a href="../#research"><span lang="pt-BR">Pesquisa</span><span lang="en">Research</span></a>
+      <a href="../#contact"><span lang="pt-BR">Contato</span><span lang="en">Contact</span></a>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Mudar o idioma" data-en-aria-label="Change language">
+      <button type="button" data-set-lang="pt" aria-pressed="true">PT</button>
+      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ───────────────────────── HEAD ───────────────────────── -->
+<header class="section page-head" id="top">
+  <div class="wrap narrow">
+    <p class="kicker"><span lang="pt-BR">Pipeline de LLM · protótipo de pesquisa</span><span lang="en">LLM pipeline · research prototype</span></p>
+    <h1 class="display">Confere Aí</h1>
+    <p class="lede">
+      <span lang="pt-BR">
+        Uma segunda opinião sobre golpes para pessoas com mais de 60 anos no Recife. A
+        pessoa manda a mensagem, o print ou o que disseram na ligação e recebe o que é
+        suspeito ali, como conferir e uma regra: não pague, não faça Pix e não passe
+        nenhum código até conferir.
+      </span>
+      <span lang="en">
+        A second opinion on scams for people over 60 in Recife. They send the
+        message, a screenshot or what the caller said, and get back what is
+        suspicious in it, how to check, and one rule: don't pay, don't send a Pix,
+        don't share a code until you've checked.
+      </span>
+    </p>
+    <p class="muted"><span lang="pt-BR">Protótipo de pesquisa, ainda não testado com pessoas.</span><span lang="en">Research prototype, not yet tested with people. The app speaks Portuguese.</span></p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://confere-ai.onrender.com" target="_blank" rel="noopener"><span lang="pt-BR">Abrir o app em nova aba ↗</span><span lang="en">Open the app in a new tab ↗</span></a>
+      <a class="btn" href="#how"><span lang="pt-BR">Como funciona</span><span lang="en">How it works</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ───────────────────────── DEMO ───────────────────────── -->
+<section class="section" id="demo" aria-label="Demonstração ao vivo" data-en-aria-label="Live demo">
+  <div class="wrap narrow">
+    <div class="app-frame">
+      <iframe src="https://confere-ai.onrender.com" title="Confere Aí, demonstração ao vivo" data-en-title="Confere Aí, live demo" loading="lazy"></iframe>
+    </div>
+    <p class="muted app-note">
+      <span lang="pt-BR">
+        A demonstração roda só com as regras até um modelo passar na mesma avaliação, e
+        pode levar um minuto para acordar. Teste com uma mensagem inventada.
+      </span>
+      <span lang="en">
+        The demo runs on the rules until a model passes the same evaluation, and it
+        may take a minute to wake up. Try it with a made-up message.
+      </span>
+    </p>
+  </div>
+</section>
+
+<!-- ───────────────────────── HOW ───────────────────────── -->
+<section class="section" id="how">
+  <div class="wrap narrow">
+    <p class="kicker reveal"><span lang="pt-BR">Como funciona</span><span lang="en">How it works</span></p>
+    <div class="card glass reveal">
+      <h2><span lang="pt-BR">Uma chamada ao modelo, bem cercada</span><span lang="en">One model call, boxed in</span></h2>
+      <ol class="list">
+        <li><span lang="pt-BR"><strong>Limpar.</strong> A entrada é cortada em 2.000 caracteres.</span><span lang="en"><strong>Clean.</strong> The input is cut to 2,000 characters.</span></li>
+        <li><span lang="pt-BR"><strong>Apagar.</strong> Telefones, CPF, números de cartão, e-mails e links viram marcas antes de qualquer análise.</span><span lang="en"><strong>Erase.</strong> Phone numbers, CPF, card numbers, e-mails and links are replaced by markers before any analysis.</span></li>
+        <li><span lang="pt-BR"><strong>Ler.</strong> Uma chamada ao LLM com saída estruturada escolhe, em listas fechadas, a rota, o tipo de golpe, os sinais de alerta e o nível de alerta, e escreve uma frase curta. A mensagem encaminhada entra como dado, nunca como instrução. As regras também leem a mensagem, sempre.</span><span lang="en"><strong>Read.</strong> One LLM call with structured output picks a route, a scam type, warning signs and an alert level from closed lists, and writes one short sentence. The forwarded message goes in as data, never as instructions. The rules read it too, every time.</span></li>
+        <li><span lang="pt-BR"><strong>Montar.</strong> A resposta é montada com texto curado: os sinais, como conferir, a regra de ouro.</span><span lang="en"><strong>Compose.</strong> The answer is built from curated text: the signs, how to check, the golden rule.</span></li>
+        <li><span lang="pt-BR"><strong>Validar.</strong> Tudo o que tranquiliza ("é seguro", "pode pagar") ou cita um contato fora da lista aprovada é descartado.</span><span lang="en"><strong>Validate.</strong> Anything that reassures ("it's safe", "you can pay") or names a contact outside the approved list is thrown out.</span></li>
+        <li><span lang="pt-BR"><strong>Cair nas regras.</strong> Se o modelo falha, demora demais ou bate no teto diário, ou se a resposta não passa na validação, as regras respondem. Emergências sempre passam pelas regras, que mandam ligar para o 190.</span><span lang="en"><strong>Fall back.</strong> If the model fails, times out or hits the daily cap, or the answer fails validation, the rules answer. Emergencies always go through the rules, which send people to 190.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── EVALUATION ───────────────────────── -->
+<section class="section" id="evaluation">
+  <div class="wrap narrow">
+    <p class="kicker reveal"><span lang="pt-BR">O que a avaliação mostrou</span><span lang="en">What the evaluation found</span></p>
+    <div class="card glass reveal">
+      <h2><span lang="pt-BR">O modelo não fez o trabalho para o qual foi contratado</span><span lang="en">The model did not earn the job it was hired for</span></h2>
+      <p>
+        <span lang="pt-BR">
+          120 casos fictícios, um modelo aberto (Qwen3-4B em CPU) contra as regras, testes
+          pareados (McNemar exato) e critérios de aprovação escritos antes da rodada.
+        </span>
+        <span lang="en">
+          120 fictitious cases, an open model (Qwen3-4B on CPU) against the rules,
+          paired tests (exact McNemar), and pass criteria written before the run.
+        </span>
+      </p>
+      <ul class="list">
+        <li><span lang="pt-BR"><strong>A hipótese principal caiu.</strong> O modelo devia explicar melhor: no mínimo +15 pontos de cobertura dos sinais de alerta essenciais, com precisão maior. Ele achou +3,8 pontos sozinho, +6,0 somando os sinais das regras, e a precisão foi menor (78% contra 92,5%).</span><span lang="en"><strong>The main hypothesis failed.</strong> The model was supposed to explain better: at least +15 points of coverage of the essential warning signs, with better precision. It found +3.8 points on its own, +6.0 with the rules' signs added, and its precision was lower (78% against 92.5%).</span></li>
+        <li><span lang="pt-BR"><strong>Onde ele foi melhor de verdade (p &lt; 0,05).</strong> Analisou mensagens verdadeiras em vez de responder "eu só ajudo a conferir golpes" (7 casos a 0, p = 0,016) e deu aos golpes claros o nível de alerta esperado (14 casos a 0, p &lt; 0,001).</span><span lang="en"><strong>Where it was really better (p &lt; 0.05).</strong> It analyzed genuine messages instead of answering "I only check scams" (7 cases to 0, p = 0.016), and it gave clear scams the expected alert level (14 cases to 0, p &lt; 0.001).</span></li>
+        <li><span lang="pt-BR"><strong>Onde ele errou e o erro machuca.</strong> Sozinho, acertou a rota de 0 de 5 emergências e de 3 de 8 casos de "já paguei"; as regras acertaram 3 de 5 e 6 de 8. Essas rotas agora são das regras.</span><span lang="en"><strong>Where it failed and a failure hurts.</strong> On its own it routed 0 of 5 emergencies and 3 of 8 "I already paid" cases correctly; the rules got 3 of 5 and 6 of 8. Those routes now belong to the rules.</span></li>
+        <li><span lang="pt-BR"><strong>A segurança se manteve.</strong> Nenhuma resposta, de nenhum dos dois, tranquilizou alguém ou citou contato fora da lista aprovada.</span><span lang="en"><strong>Safety held.</strong> No answer, from either side, reassured anyone or named a contact outside the approved list.</span></li>
+        <li><span lang="pt-BR"><strong>Lento demais em CPU.</strong> 22,9 s no percentil 95, contra uma meta de 10 s.</span><span lang="en"><strong>Too slow on a CPU.</strong> 22.9 s at the 95th percentile, against a 10 s bar.</span></li>
+      </ul>
+      <p class="muted">
+        <span lang="pt-BR">
+          Então o modelo lê a mensagem e o texto curado explica. Antes de qualquer piloto, o
+          modelo escolhido tem de passar no mesmo teste e em 60 casos novos escritos por
+          outras pessoas.
+        </span>
+        <span lang="en">
+          So the model reads the message and curated text does the explaining. Before
+          any pilot, the chosen model has to pass the same test, plus 60 new cases
+          written by other people.
+        </span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── NOT DONE ───────────────────────── -->
+<section class="section" id="not-done">
+  <div class="wrap narrow">
+    <p class="kicker reveal"><span lang="pt-BR">O que falta</span><span lang="en">What is not done</span></p>
+    <div class="card glass reveal">
+      <ul class="list">
+        <li><span lang="pt-BR"><strong>Ninguém usou ainda.</strong> Há um piloto desenhado, com oficinas para pessoas idosas e critérios de sucesso escritos antes, mas ele não começou.</span><span lang="en"><strong>No one has used it.</strong> A pilot is designed, with workshops for older adults and success criteria written in advance, but it has not started.</span></li>
+        <li><span lang="pt-BR"><strong>WhatsApp e áudio.</strong> O webhook do WhatsApp tem testes automáticos, mas nunca rodou contra a API real da Meta, e a transcrição de áudio não foi testada.</span><span lang="en"><strong>WhatsApp and audio.</strong> The WhatsApp webhook has automated tests but has never run against Meta's real API, and audio transcription has not been tested at all.</span></li>
+        <li><span lang="pt-BR"><strong>Casos otimistas.</strong> Quem escreveu as regras também escreveu os 120 casos, então as regras conhecem as palavras que procuram.</span><span lang="en"><strong>Optimistic cases.</strong> The same author wrote the rules and the 120 cases, so the rules know the words they look for.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <span><span lang="pt-BR"><a href="../">Lucas Carvalho</a> · Recife, Pernambuco · Brasil</span><span lang="en"><a href="../">Lucas Carvalho</a> · Recife, Pernambuco · Brazil</span></span>
+  <span id="year"></span>
+</footer>
+
+<script src="../main.js?v=20261114" defer></script>
+</body>
+</html>

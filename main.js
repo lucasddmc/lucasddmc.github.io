@@ -34,6 +34,38 @@
     }
   }
 
+  // Language. The inline script in <head> already picked it (?lang= > saved
+  // choice > Portuguese) before the page painted; here the buttons get wired,
+  // and the title, description and translated attributes follow the choice.
+  var root = document.documentElement;
+  var ptTitle = document.title;
+  var metaDesc = document.querySelector('meta[name="description"]');
+  var ptDesc = metaDesc ? metaDesc.getAttribute('content') : '';
+  var ATTRS = ['alt', 'title', 'aria-label'];
+
+  function setLang(lang, save) {
+    var en = lang === 'en';
+    root.setAttribute('data-lang', en ? 'en' : 'pt');
+    root.lang = en ? 'en' : 'pt-BR';
+    document.title = en ? (root.dataset.titleEn || ptTitle) : ptTitle;
+    if (metaDesc) metaDesc.setAttribute('content', en ? (root.dataset.descEn || ptDesc) : ptDesc);
+    ATTRS.forEach(function (a) {
+      document.querySelectorAll('[data-en-' + a + ']').forEach(function (el) {
+        if (!el.hasAttribute('data-pt-' + a)) el.setAttribute('data-pt-' + a, el.getAttribute(a) || '');
+        el.setAttribute(a, el.getAttribute((en ? 'data-en-' : 'data-pt-') + a));
+      });
+    });
+    document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === (en ? 'en' : 'pt')));
+    });
+    if (save) { try { localStorage.setItem('lang', en ? 'en' : 'pt'); } catch (e) {} }
+  }
+
+  setLang(root.getAttribute('data-lang'), false);
+  document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.getAttribute('data-set-lang'), true); });
+  });
+
   var y = document.getElementById('year');
   if (y) y.textContent = String(new Date().getFullYear());
 })();

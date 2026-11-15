@@ -103,6 +103,7 @@ body::before{
   font-weight:600; letter-spacing:.14em; font-size:.78rem;
   text-decoration:none; color:var(--ink);
 }
+.nav-right{ display:flex; align-items:center; gap:.35rem; }
 .nav-links{ display:flex; gap:.15rem; }
 .nav-links a{
   padding:.5rem .85rem; border-radius:999px;
@@ -111,6 +112,25 @@ body::before{
 }
 .nav-links a:hover{ color:var(--ink); background:rgba(255,255,255,.07); }
 @media (max-width:560px){ .nav-links a:not(:last-child){ display:none; } }
+
+/* ── language: both texts live in the HTML, only the active one shows ── */
+html[data-lang="pt"] [lang="en"],
+html[data-lang="en"] [lang="pt-BR"]{ display:none !important; }
+
+.lang-switch{
+  display:flex; gap:.1rem; padding:.18rem;
+  border-radius:999px; border:1px solid var(--rule);
+}
+html:not(.js) .lang-switch{ display:none; }   /* without JS there is nothing to switch */
+.lang-switch button{
+  font:inherit; font-size:.72rem; letter-spacing:.1em;
+  padding:.32rem .58rem; border:0; border-radius:999px;
+  background:transparent; color:var(--ink-faint); cursor:pointer;
+  transition:color .25s ease, background .25s ease;
+}
+.lang-switch button:hover{ color:var(--ink); }
+.lang-switch button[aria-pressed="true"]{ color:var(--ink); background:rgba(255,255,255,.10); }
+.lang-switch button:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
 
 /* ── hero ──────────────────────────────────────────────────── */
 .hero{
@@ -255,9 +275,14 @@ body::before{
 /* matplotlib figures are white — flip them into the dark */
 .invertible{ filter:invert(1) hue-rotate(180deg) saturate(1.15) brightness(.92); background:#000 !important; }
 .card-figure figcaption{ margin-top:.7rem; font-size:.78rem; color:var(--ink-faint); }
+/* phone screenshots: narrow and centred */
+.card-figure.phone img{ width:min(300px,100%); margin-inline:auto; }
+.card-figure.phone figcaption{ text-align:center; }
 
 .grid{ display:grid; gap:1.1rem; grid-template-columns:repeat(2,1fr); }
 @media (max-width:780px){ .grid{ grid-template-columns:1fr; } }
+/* a card that closes an odd-sized grid takes the whole row */
+.grid > .wide{ grid-column:1 / -1; }
 
 .link{
   display:inline-block; margin-top:.4rem; font-size:.9rem;
@@ -265,6 +290,7 @@ body::before{
   border-bottom:1px solid rgba(122,162,255,.35); padding-bottom:1px;
 }
 .link:hover{ border-bottom-color:var(--accent); }
+.link + .link{ margin-left:1.1rem; }
 
 .list{ margin:1rem 0; padding-left:1.1rem; color:var(--ink-dim); max-width:64ch; }
 .list li{ margin-bottom:.55rem; }
@@ -308,6 +334,16 @@ body::before{
   border-top:1px solid var(--rule);
   font-size:.78rem; color:var(--ink-faint);
 }
+
+/* ── project page (confere-ai/) ────────────────────────────── */
+.page-head{ padding-top:clamp(7.5rem,18vh,10rem); }
+.page-head h1{
+  margin:0; font-weight:300; letter-spacing:-.035em; line-height:.95;
+  font-size:clamp(2.8rem,10vw,5.5rem);
+}
+.app-frame{ border-radius:16px; overflow:hidden; border:1px solid var(--rule); background:#fff; }
+.app-frame iframe{ display:block; width:100%; height:min(85vh,900px); border:0; }
+.app-note{ margin-top:.9rem; }
 
 /* ── scroll-driven reveals ─────────────────────────────────── */
 .reveal{

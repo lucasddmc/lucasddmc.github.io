@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR" data-lang="pt" data-title-en="Lucas Carvalho · LLM systems and AI security, CIn-UFPE" data-desc-en="MSc student at CIn-UFPE researching how language models get broken by jailbreaks and prompt injection, and building LLM systems that hold up. Director of Education at LigIA.">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lucas Carvalho · Adversarial robustness, CIn-UFPE</title>
-<meta name="description" content="MSc student at CIn-UFPE researching deep neural networks robust by design against adversarial attacks. Director of Education at LigIA.">
+<script>(function(){var d=document.documentElement,l=null;d.classList.add('js');try{var q=new URLSearchParams(location.search).get('lang');if(q==='en'||q==='pt'){l=q;try{localStorage.setItem('lang',q);}catch(e){}}else{l=localStorage.getItem('lang');}}catch(e){}if(l==='en'){d.setAttribute('data-lang','en');d.lang='en';}})();</script>
+<title>Lucas Carvalho · Sistemas com LLM e segurança de IA, CIn-UFPE</title>
+<meta name="description" content="Mestrando no CIn-UFPE. Pesquiso como modelos de linguagem são quebrados por jailbreak e prompt injection e construo sistemas com LLM que se sustentam quando o modelo erra. Diretor de Ensino da LigIA.">
 <meta name="color-scheme" content="dark">
 <meta property="og:title" content="Lucas Carvalho">
-<meta property="og:description" content="Adversarial robustness by design. CIn-UFPE.">
+<meta property="og:description" content="Sistemas com LLM e segurança de IA. CIn-UFPE.">
 <meta property="og:type" content="profile">
 <link rel="preconnect" href="https://api.fontshare.com">
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f%5B%5D=satoshi@300,400,500,700&f%5B%5D=switzer@300,400,500&display=swap">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=20261114">
 </head>
 <body>
 
 <div class="hero-media" aria-hidden="true">
   <picture>
     <source media="(max-width: 820px)" srcset="assets/hero-portrait.jpg">
-    <img src="assets/hero-landscape.jpg" alt="" fetchpriority="high">
+    <img src="assets/hero-landscape.jpg" alt="" data-en-alt="" fetchpriority="high">
   </picture>
   <div class="hero-scrim"></div>
 </div>
@@ -27,13 +28,19 @@
 
 <div class="progress" aria-hidden="true"></div>
 
-<nav class="nav glass" aria-label="Primary">
+<nav class="nav glass" aria-label="Principal" data-en-aria-label="Primary">
   <a class="nav-mark" href="#top">LC</a>
-  <div class="nav-links">
-    <a href="#work">Work</a>
-    <a href="#research">Research</a>
-    <a href="#path">Path</a>
-    <a href="#contact">Contact</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#work"><span lang="pt-BR">Projetos</span><span lang="en">Work</span></a>
+      <a href="#research"><span lang="pt-BR">Pesquisa</span><span lang="en">Research</span></a>
+      <a href="#path"><span lang="pt-BR">Trajetória</span><span lang="en">Path</span></a>
+      <a href="#contact"><span lang="pt-BR">Contato</span><span lang="en">Contact</span></a>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Mudar o idioma" data-en-aria-label="Change language">
+      <button type="button" data-set-lang="pt" aria-pressed="true">PT</button>
+      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+    </div>
   </div>
 </nav>
 
@@ -41,21 +48,30 @@
 <header class="hero" id="top">
 
   <div class="hero-body">
-    <p class="eyebrow">Recife, Brazil</p>
+    <p class="eyebrow"><span lang="pt-BR">Recife, Brasil</span><span lang="en">Recife, Brazil</span></p>
     <h1>Lucas<br><span class="surname">Carvalho</span></h1>
     <p class="lede">
-      I build neural networks that are <em>robust by design</em> against adversarial
-      attacks. Reliability that comes from the architecture, not from patching
-      failures after the fact.
+      <span lang="pt-BR">
+        Construo sistemas com modelos de linguagem e pesquiso <em>como eles quebram</em>.
+        Confiabilidade que vem do desenho do sistema, não de confiar que o modelo vai se
+        comportar.
+      </span>
+      <span lang="en">
+        I build with language models, and I research <em>how they break</em>.
+        Reliability that comes from how the system is designed, not from trusting
+        the model to behave.
+      </span>
     </p>
     <div class="hero-meta">
-      <span>MSc Computer Science · CIn-UFPE</span>
+      <span lang="pt-BR">Mestrado em Ciência da Computação · CIn-UFPE</span>
+      <span lang="en">MSc Computer Science · CIn-UFPE</span>
       <span class="dot">·</span>
-      <span>Director of Education, LigIA</span>
+      <span lang="pt-BR">Diretor de Ensino, LigIA</span>
+      <span lang="en">Director of Education, LigIA</span>
     </div>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="https://huggingface.co/spaces/lucasddmc/ViTViz" target="_blank" rel="noopener">Try ViTViz ↗</a>
-      <a class="btn" href="#work">See the work</a>
+      <a class="btn btn-primary" href="confere-ai/"><span lang="pt-BR">Testar o Confere Aí</span><span lang="en">Try Confere Aí</span></a>
+      <a class="btn" href="#work"><span lang="pt-BR">Ver os projetos</span><span lang="en">See the work</span></a>
     </div>
   </div>
 
@@ -67,16 +83,22 @@
 <!-- ───────────────────────── NOW ───────────────────────── -->
 <section class="section" id="now">
   <div class="wrap narrow reveal">
-    <p class="kicker">Now</p>
+    <p class="kicker"><span lang="pt-BR">Agora</span><span lang="en">Now</span></p>
     <p class="big-text">
-      I research what makes vision models fail when nobody is looking, and I build
-      the places where people learn this. Both feel like the same job.
+      <span lang="pt-BR">
+        Pesquiso como modelos de linguagem são convencidos a falhar e construo os
+        lugares onde as pessoas aprendem isso. As duas coisas me parecem o mesmo trabalho.
+      </span>
+      <span lang="en">
+        I research how language models get talked into failing, and I build the
+        places where people learn this. Both feel like the same job.
+      </span>
     </p>
     <div class="chips">
-      <span>Adversarial robustness</span><span>Vision Transformers</span>
-      <span>AI safety</span><span>PyTorch</span><span>Python</span>
-      <span>Swift / SwiftUI</span><span>Claude Code</span><span>SLURM / HPC</span>
-      <span>React</span><span>Docker</span>
+      <span lang="pt-BR">Segurança de LLMs</span><span lang="en">LLM security</span><span>Prompt injection</span>
+      <span lang="pt-BR">Agentes e MCP</span><span lang="en">Agents &amp; MCP</span><span>Claude Code</span><span>RAG</span>
+      <span lang="pt-BR">Avaliação de LLMs</span><span lang="en">LLM evaluation</span><span>Python</span><span>PyTorch</span>
+      <span>TypeScript / React</span><span>Swift / SwiftUI</span><span>AWS / Docker</span>
     </div>
   </div>
 </section>
@@ -84,83 +106,265 @@
 <!-- ───────────────────────── WORK ───────────────────────── -->
 <section class="section" id="work">
   <div class="wrap">
-    <p class="kicker reveal">Selected work</p>
+    <p class="kicker reveal"><span lang="pt-BR">Projetos selecionados</span><span lang="en">Selected work</span></p>
+
+    <!-- Confere Aí -->
+    <article class="card glass reveal feature">
+      <div class="card-copy">
+        <p class="tag"><span lang="pt-BR">Pipeline de LLM · protótipo de pesquisa</span><span lang="en">LLM pipeline · research prototype</span></p>
+        <h2>Confere Aí</h2>
+        <p>
+          <span lang="pt-BR">
+            Uma segunda opinião sobre golpes para pessoas com mais de 60 anos no Recife.
+            A pessoa manda a mensagem, o print ou o que disseram na ligação e recebe o que
+            é suspeito ali, como conferir e uma regra: não pague, não faça Pix e não passe
+            nenhum código até conferir.
+          </span>
+          <span lang="en">
+            A second opinion on scams for people over 60 in Recife. They send the
+            message, a screenshot or what the caller said, and get back what is
+            suspicious in it, how to check, and one rule: don't pay, don't send a Pix,
+            don't share a code until you've checked.
+          </span>
+        </p>
+        <p>
+          <span lang="pt-BR">
+            Uma chamada ao LLM lê a mensagem e escolhe em listas fechadas: rota, tipo de
+            golpe, sinais de alerta. A resposta é texto curado mais uma frase do modelo, e
+            um validador descarta tudo o que tranquiliza ou cita um contato fora da lista
+            aprovada. As rotas críticas ficam com as regras.
+          </span>
+          <span lang="en">
+            One LLM call reads the message into closed lists: route, scam type,
+            warning signs. The answer is curated text plus one sentence from the
+            model, and a validator throws out anything that reassures or names a
+            contact outside the approved list. Rules handle the critical routes.
+          </span>
+        </p>
+        <p class="muted">
+          <span lang="pt-BR">
+            O teste pré-registrado exigia que o modelo explicasse melhor do que regras
+            simples. Não explicou (+3,8 pontos contra uma meta de +15), então ficou só com
+            o trabalho em que ganhou: ler a mensagem.
+          </span>
+          <span lang="en">
+            The pre-registered test said the model had to explain better than plain
+            rules. It didn't (+3.8 points against a +15 bar), so it kept only the job
+            it did win: reading the message.
+          </span>
+        </p>
+        <p class="muted"><span lang="pt-BR">Protótipo de pesquisa, ainda não testado com pessoas.</span><span lang="en">Research prototype, not yet tested with people.</span></p>
+        <a class="link" href="confere-ai/"><span lang="pt-BR">Teste e veja como funciona →</span><span lang="en">Try it and see how it works →</span></a>
+      </div>
+      <figure class="card-figure phone">
+        <img src="assets/confere-ai.png" alt="Confere Aí respondendo a uma mensagem fictícia de alguém que diz ter trocado de número: um alerta vermelho dizendo que tem cara de golpe e os sinais que ele achou" data-en-alt="Confere Aí answering a fictitious message from someone who says they changed their number: a red alert saying it looks like a scam, and the signs it found" loading="lazy">
+        <figcaption><span lang="pt-BR">Um caso fictício: o golpe do "troquei de número".</span><span lang="en">A fictitious case: the "I changed my number" scam.</span></figcaption>
+      </figure>
+    </article>
 
     <!-- ViTViz -->
     <article class="card glass reveal feature">
       <div class="card-copy">
-        <p class="tag">Research tool · live</p>
+        <p class="tag"><span lang="pt-BR">Ferramenta de pesquisa · no ar</span><span lang="en">Research tool · live</span></p>
         <h2>ViTViz</h2>
         <p>
-          Upload an image, pick a Vision Transformer, and watch its attention move
-          while an adversarial attack runs. Attention rollout plus per-layer and
-          per-head views. Five attack methods (FGSM, PGD, MIM, TGR, SAGA), shown
-          iteration by iteration, across six pretrained architectures or your own
-          weights.
+          <span lang="pt-BR">
+            Envie uma imagem, escolha um Vision Transformer e veja a atenção dele se mover
+            enquanto um ataque adversarial roda. Attention rollout, mais visões por camada e
+            por cabeça. Cinco ataques (FGSM, PGD, MIM, TGR, SAGA), mostrados iteração por
+            iteração, em seis arquiteturas pré-treinadas ou com os seus próprios pesos.
+          </span>
+          <span lang="en">
+            Upload an image, pick a Vision Transformer, and watch its attention move
+            while an adversarial attack runs. Attention rollout plus per-layer and
+            per-head views. Five attack methods (FGSM, PGD, MIM, TGR, SAGA), shown
+            iteration by iteration, across six pretrained architectures or your own
+            weights.
+          </span>
         </p>
         <p class="muted">
-          People believe adversarial fragility when they make a model fail on their
-          own photo. A slide never does that.
+          <span lang="pt-BR">
+            As pessoas acreditam na fragilidade adversarial quando fazem um modelo errar com
+            a própria foto. Um slide nunca consegue isso.
+          </span>
+          <span lang="en">
+            People believe adversarial fragility when they make a model fail on their
+            own photo. A slide never does that.
+          </span>
         </p>
-        <a class="link" href="https://huggingface.co/spaces/lucasddmc/ViTViz" target="_blank" rel="noopener">Open the Space ↗</a>
+        <a class="link" href="https://huggingface.co/spaces/lucasddmc/ViTViz" target="_blank" rel="noopener"><span lang="pt-BR">Abrir o Space ↗</span><span lang="en">Open the Space ↗</span></a>
       </div>
       <figure class="card-figure">
-        <img class="invertible" src="assets/magnitude_redistribution.png" alt="Clean attention, adversarial attention, and their signed difference across a Vision Transformer">
-        <figcaption>Magnitude redistribution: same spatial cluster, permuted amplitudes.</figcaption>
+        <img class="invertible" src="assets/magnitude_redistribution.png" alt="Atenção limpa, atenção sob ataque e a diferença com sinal entre as duas, num Vision Transformer" data-en-alt="Clean attention, adversarial attention, and their signed difference across a Vision Transformer">
+        <figcaption><span lang="pt-BR">Redistribuição de magnitude: o mesmo agrupamento espacial, com as amplitudes permutadas.</span><span lang="en">Magnitude redistribution: same spatial cluster, permuted amplitudes.</span></figcaption>
       </figure>
     </article>
 
     <div class="grid">
+      <!-- Pode -->
+      <article class="card glass reveal">
+        <p class="tag">OCR + LLM · App Store</p>
+        <h3>Pode</h3>
+        <p>
+          <span lang="pt-BR">
+            Um app de dietas e restrições alimentares em que fui líder técnico, num time de
+            cinco. Construí o fluxo que cadastra um produto pela embalagem: o OCR lê o
+            rótulo, os ingredientes e a tabela nutricional; um LLM preenche o nome e a lista
+            de ingredientes, cruzada com uma base de ingredientes; e o perfil de cada pessoa
+            aponta o que ela não pode consumir.
+          </span>
+          <span lang="en">
+            A diet and food-restriction app where I was tech lead, on a team of five.
+            I built the flow that registers a product from its packaging: OCR reads
+            the label, the ingredients and the nutrition table; an LLM fills in the
+            name and the ingredient list, matched against an ingredient database; and
+            each person's profile flags what they can't eat.
+          </span>
+        </p>
+        <p class="muted">
+          <span lang="pt-BR">Cadastrar um produto passou de mais de dois minutos para segundos, cerca de 80% menos tempo. Amendoim na lista de restrições de alguém? Todo produto com amendoim aparece com alerta para essa pessoa.</span>
+          <span lang="en">Registering a product went from over two minutes to seconds, about 80% less time. Peanut on someone's restricted list? Every product with peanut shows up flagged for them.</span>
+        </p>
+      </article>
+
+      <!-- Claude Code plugins -->
+      <article class="card glass reveal">
+        <p class="tag"><span lang="pt-BR">Código aberto · plugins do Claude Code</span><span lang="en">Open source · Claude Code plugins</span></p>
+        <h3><span lang="pt-BR">paper-sift e depth-first-tutor</span><span lang="en">paper-sift and depth-first-tutor</span></h3>
+        <p>
+          <span lang="pt-BR">
+            O <strong>paper-sift</strong> percorre o grafo de citações do Semantic Scholar,
+            tria abstracts com um modelo calibrado (o Jev, da TypeSafe) e justifica cada
+            paper indicado. O <strong>depth-first-tutor</strong> é um tutor socrático que
+            guarda o estudo numa árvore de perguntas e faz você tentar antes de mostrar
+            qualquer coisa. Membros da LigIA usam os dois.
+          </span>
+          <span lang="en">
+            <strong>paper-sift</strong> walks the Semantic Scholar citation graph,
+            screens abstracts with a calibrated model (TypeSafe's Jev) and says why
+            each paper made the list. <strong>depth-first-tutor</strong> is a Socratic
+            tutor that keeps your study as a tree of questions and has you try before
+            it shows anything. LigIA members use both.
+          </span>
+        </p>
+        <a class="link" href="https://github.com/lucasddmc/paper-sift" target="_blank" rel="noopener">paper-sift ↗</a>
+        <a class="link" href="https://github.com/lucasddmc/depth-first-tutor" target="_blank" rel="noopener">depth-first-tutor ↗</a>
+      </article>
+
+      <!-- Personal agent -->
+      <article class="card glass reveal">
+        <p class="tag"><span lang="pt-BR">Agente · Telegram</span><span lang="en">Agent · Telegram</span></p>
+        <h3><span lang="pt-BR">Um agente pessoal, auditado</span><span lang="en">A personal agent, audited</span></h3>
+        <p>
+          <span lang="pt-BR">
+            Um fork do Claude Hermes que cobra minhas tarefas em check-ins agendados, cria
+            lembretes no Google Calendar e responde sobre minhas finanças com dados de Open
+            Finance. Auditei a segurança do agente, deixei só as ferramentas de que ele
+            precisa e cortei o contexto por mensagem de 106–256 mil para cerca de 34 mil
+            tokens.
+          </span>
+          <span lang="en">
+            A fork of Claude Hermes that checks in on my tasks on a schedule, sets
+            Google Calendar reminders and answers questions about my finances from
+            Open Finance data. I audited its security, cut its tools down to what it
+            needs, and brought the context per message from 106–256k tokens to about
+            34k.
+          </span>
+        </p>
+      </article>
+
       <!-- Trilha -->
       <article class="card glass reveal">
-        <p class="tag">Curriculum · 28 lessons</p>
-        <h3>The LigIA Trilha</h3>
+        <p class="tag"><span lang="pt-BR">Currículo · 28 aulas</span><span lang="en">Curriculum · 28 lessons</span></p>
+        <h3><span lang="pt-BR">A Trilha da LigIA</span><span lang="en">The LigIA Trilha</span></h3>
         <p>
-          A free AI fundamentals track I built inside our league's platform. It runs
-          from linear algebra and vector calculus through gradient descent, backprop
-          and CNNs, up to tokenization, attention and text generation. A placement
-          flow routes you to a starting point, practice is evaluated automatically,
-          and code runs in the browser.
+          <span lang="pt-BR">
+            Uma trilha gratuita de fundamentos de IA que estruturei dentro da plataforma da
+            Liga. Vai de álgebra linear e cálculo vetorial, passa por gradiente descendente,
+            backpropagation e CNNs, e chega a tokenização, atenção e geração de texto. Um
+            nivelamento escolhe o seu ponto de partida, o código roda no navegador e as
+            respostas abertas são corrigidas por um LLM com rubrica, com streaming, limite
+            por aluno e provedor trocável.
+          </span>
+          <span lang="en">
+            A free AI fundamentals track I built inside our league's platform. It runs
+            from linear algebra and vector calculus through gradient descent, backprop
+            and CNNs, up to tokenization, attention and text generation. A placement
+            flow picks your starting point, code runs in the browser, and open answers
+            are graded by an LLM against a rubric, streamed back, with a per-student
+            limit and a provider you can swap.
+          </span>
         </p>
-        <p class="muted">React · Supabase · end-to-end tested</p>
-      </article>
-
-      <!-- Ágora -->
-      <article class="card glass reveal">
-        <p class="tag">Community · since March 2026</p>
-        <h3>Ágora</h3>
-        <p>
-          A bi-weekly forum I created with a fellow LigIA director, and host at UFPE. One technical presentation,
-          a paper or a tool, then a structured argument about what it implies. Ten
-          to twenty students a session. It has outlived the novelty, which is the
-          only test that matters for a recurring event.
-        </p>
-        <p class="muted">At least five students changed research direction because of a session, went looking for an advisor, and got in.</p>
-      </article>
-
-      <!-- Apple -->
-      <article class="card glass reveal">
-        <p class="tag">iOS · Apple Developer Academy</p>
-        <h3>Shipped apps</h3>
-        <p>
-          Tech lead on five projects. Three of them: <strong>SoRisinhos</strong>, whose computer-vision model
-          detects children's brushing movements, was chosen by Apple as our academy's
-          national representative. <strong>Audivit</strong> is an audio game built to
-          be played together by blind, low-vision and sighted players.
-          <strong>Axon</strong> was one of the first visionOS apps made in Brazil.
-        </p>
+        <p class="muted"><span lang="pt-BR">React · Supabase Edge Functions · testado de ponta a ponta</span><span lang="en">React · Supabase Edge Functions · end-to-end tested</span></p>
       </article>
 
       <!-- Agents -->
       <article class="card glass reveal">
-        <p class="tag">Tooling</p>
-        <h3>A panel of critics</h3>
+        <p class="tag"><span lang="pt-BR">Ferramental</span><span lang="en">Tooling</span></p>
+        <h3><span lang="pt-BR">Um painel de críticos</span><span lang="en">A panel of critics</span></h3>
         <p>
-          26 agents and 8 orchestration commands that attack my own work: a devil's
-          advocate barred from touching execution, a reviewer holding the venue's
-          actual rubric, a validator that explodes every citation, an auditor that
-          proves an implementation computes the equation it claims. All read-only.
-          They find, I decide.
+          <span lang="pt-BR">
+            Dezessete críticos que só leem e oito comandos de orquestração que atacam o meu
+            próprio trabalho: um advogado do diabo proibido de mexer na execução, um revisor
+            com a rubrica real da conferência, um validador que desmonta cada citação, um
+            auditor que prova que a implementação calcula a equação que diz calcular. Eles
+            acham, eu decido.
+          </span>
+          <span lang="en">
+            Seventeen read-only critics and eight orchestration commands that attack
+            my own work: a devil's advocate barred from touching execution, a reviewer
+            holding the venue's actual rubric, a validator that explodes every
+            citation, an auditor that proves an implementation computes the equation
+            it claims. They find, I decide.
+          </span>
+        </p>
+      </article>
+
+      <!-- Ágora -->
+      <article class="card glass reveal">
+        <p class="tag"><span lang="pt-BR">Comunidade · desde março de 2026</span><span lang="en">Community · since March 2026</span></p>
+        <h3>Ágora</h3>
+        <p>
+          <span lang="pt-BR">
+            Um fórum quinzenal que criei com outro diretor da LigIA e que conduzo na UFPE.
+            Uma apresentação técnica, de um paper ou de uma ferramenta, e depois uma
+            discussão estruturada sobre o que ela implica. De dez a vinte alunos por sessão.
+            Sobreviveu à novidade, que é o único teste que importa para um evento recorrente.
+          </span>
+          <span lang="en">
+            A bi-weekly forum I created with a fellow LigIA director, and host at UFPE. One technical presentation,
+            a paper or a tool, then a structured argument about what it implies. Ten
+            to twenty students a session. It has outlived the novelty, which is the
+            only test that matters for a recurring event.
+          </span>
+        </p>
+        <p class="muted">
+          <span lang="pt-BR">Pelo menos cinco alunos mudaram de área de pesquisa por causa de uma sessão, foram atrás de um orientador e conseguiram.</span>
+          <span lang="en">At least five students changed research direction because of a session, went looking for an advisor, and got in.</span>
+        </p>
+      </article>
+
+      <!-- Apple -->
+      <article class="card glass reveal wide">
+        <p class="tag">iOS · Apple Developer Academy</p>
+        <h3><span lang="pt-BR">Apps publicados</span><span lang="en">Shipped apps</span></h3>
+        <p>
+          <span lang="pt-BR">
+            Líder técnico em cinco projetos. Entre eles: um app de escovação infantil cuja
+            visão computacional confere a escovação em tempo real, publicado na App Store,
+            que representou a Academy da UFPE e o estado de Pernambuco na UNICAMP em 2025;
+            o <strong>Audivit</strong>, um jogo de áudio feito para ser jogado junto por
+            pessoas cegas, com baixa visão e videntes; e o <strong>Axon</strong>, um dos
+            primeiros apps de visionOS feitos no Brasil.
+          </span>
+          <span lang="en">
+            Tech lead on five projects. Among them: a children's toothbrushing app
+            whose computer-vision model checks brushing in real time, published on the
+            App Store, which represented UFPE's Academy and the state of Pernambuco at UNICAMP in 2025;
+            <strong>Audivit</strong>, an audio game built to be played together by
+            blind, low-vision and sighted players; and <strong>Axon</strong>, one of
+            the first visionOS apps made in Brazil.
+          </span>
         </p>
       </article>
     </div>
@@ -170,20 +374,27 @@
 <!-- ───────────────────────── RESEARCH ───────────────────────── -->
 <section class="section" id="research">
   <div class="wrap narrow">
-    <p class="kicker reveal">Research</p>
+    <p class="kicker reveal"><span lang="pt-BR">Pesquisa</span><span lang="en">Research</span></p>
     <div class="card glass reveal">
-      <h2>Robustness as a property you design for</h2>
+      <h2><span lang="pt-BR">Robustez como algo que se projeta</span><span lang="en">Robustness as a property you design for</span></h2>
       <p>
-        A defense that survives the attacks we thought to run tells us almost nothing
-        about the failures we didn't imagine. My master's work at CIn-UFPE asks
-        whether reliability can be designed into the architecture instead of bolted
-        on afterwards.
+        <span lang="pt-BR">
+          Uma defesa que resiste aos ataques que pensamos em rodar diz quase nada sobre as
+          falhas que não imaginamos. No mestrado no CIn-UFPE, estudo como modelos de
+          linguagem, dos pequenos aos de visão e linguagem, são quebrados por jailbreak e
+          prompt injection, e o que faz uma defesa se sustentar.
+        </span>
+        <span lang="en">
+          A defense that survives the attacks we thought to run tells us almost nothing
+          about the failures we didn't imagine. My master's at CIn-UFPE studies how
+          language models, from small ones to vision-language models, get broken by
+          jailbreaks and prompt injection, and what makes a defense hold.
+        </span>
       </p>
       <ul class="list">
-        <li><strong>Attention under attack.</strong> How Vision Transformer attention redistributes under adversarial perturbation, with the Serrapilheira Institute.</li>
-        <li><strong>Attacks that teach defenses.</strong> A new attack method for text classifiers, used to derive stronger defenses.</li>
+        <li><span lang="pt-BR"><strong>Atenção sob ataque.</strong> Como a atenção de Vision Transformers se redistribui sob perturbação adversarial, com o Instituto Serrapilheira. Artigo em revisão.</span><span lang="en"><strong>Attention under attack.</strong> How Vision Transformer attention redistributes under adversarial perturbation, with the Serrapilheira Institute. Paper under review.</span></li>
+        <li><span lang="pt-BR"><strong>Ataques mais baratos a texto.</strong> Ataques caixa-preta a classificadores de texto que precisam de menos consultas.</span><span lang="en"><strong>Cheaper attacks on text.</strong> Work on black-box attacks against text classifiers that need fewer queries.</span></li>
       </ul>
-      <p class="muted">Publications expected in 2026.</p>
     </div>
   </div>
 </section>
@@ -191,17 +402,24 @@
 <!-- ───────────────────────── PATH ───────────────────────── -->
 <section class="section" id="path">
   <div class="wrap narrow">
-    <p class="kicker reveal">Path</p>
+    <p class="kicker reveal"><span lang="pt-BR">Trajetória</span><span lang="en">Path</span></p>
     <ol class="timeline">
-      <li class="reveal"><span class="when">2026 → 2027</span><span class="what"><strong>MSc, Computer Science</strong> · Centro de Informática, UFPE</span></li>
-      <li class="reveal"><span class="when">2026 → now</span><span class="what"><strong>Director of Education</strong> · LigIA, UFPE's AI academic league</span></li>
-      <li class="reveal"><span class="when">2024 → 2025</span><span class="what"><strong>iOS Developer &amp; tech lead</strong> · Apple Developer Academy, UFPE</span></li>
-      <li class="reveal"><span class="when">2021 → 2026</span><span class="what"><strong>BSc, Computer Science</strong> · UFPE. Teaching assistant, Deep Learning</span></li>
-      <li class="reveal"><span class="when">2021 → 2023</span><span class="what"><strong>Test Engineer</strong> · Nutcache. Cut the production bug rate by 31%</span></li>
+      <li class="reveal"><span class="when">2026 → 2027</span><span class="what"><span lang="pt-BR"><strong>Mestrado em Ciência da Computação</strong> · Centro de Informática, UFPE, com término previsto para o fim de 2027. Bolsista do Instituto Serrapilheira desde 2025</span><span lang="en"><strong>MSc, Computer Science</strong> · Centro de Informática, UFPE, expected to finish in late 2027. Serrapilheira Institute fellow since 2025</span></span></li>
+      <li class="reveal"><span class="when"><span lang="pt-BR">2026 → hoje</span><span lang="en">2026 → now</span></span><span class="what"><span lang="pt-BR"><strong>Diretor de Ensino</strong> · LigIA, a liga acadêmica de IA da UFPE</span><span lang="en"><strong>Director of Education</strong> · LigIA, UFPE's AI academic league</span></span></li>
+      <li class="reveal"><span class="when">2025</span><span class="what"><span lang="pt-BR"><strong>Cofundador e CTO</strong> · Vetrum. Protótipo de um chat com RAG na AWS para o setor jurídico; liderei quatro desenvolvedores</span><span lang="en"><strong>Co-founder &amp; CTO</strong> · Vetrum. Prototype of a RAG chat for the legal sector on AWS; led four developers</span></span></li>
+      <li class="reveal"><span class="when">2024 → 2025</span><span class="what"><span lang="pt-BR"><strong>Desenvolvedor iOS e líder técnico</strong> · Apple Developer Academy, UFPE</span><span lang="en"><strong>iOS Developer &amp; tech lead</strong> · Apple Developer Academy, UFPE</span></span></li>
+      <li class="reveal"><span class="when">2021 → 2026</span><span class="what"><span lang="pt-BR"><strong>Bacharelado em Ciência da Computação</strong> · UFPE. Monitor de Introdução à Aprendizagem Profunda</span><span lang="en"><strong>BSc, Computer Science</strong> · UFPE. Teaching assistant, Deep Learning</span></span></li>
+      <li class="reveal"><span class="when">2021 → 2023</span><span class="what"><span lang="pt-BR"><strong>Estagiário em Engenharia de Testes</strong> · Nutcache. Reduzi em 31% os bugs em produção</span><span lang="en"><strong>Test engineering intern</strong> · Nutcache. Cut the production bug rate by 31%</span></span></li>
     </ol>
     <p class="muted reveal center">
-      Speaker at CIn and Apple Developer Academy open days (100+ people) and at
-      Campus Party Northeast. “Projetão” winner, Porto Digital.
+      <span lang="pt-BR">
+        Palestrante nos open days do CIn e da Apple Developer Academy (mais de 100 pessoas)
+        e na Campus Party Nordeste. Projetão (Porto Digital): prêmio de maior potencial de mercado.
+      </span>
+      <span lang="en">
+        Speaker at CIn and Apple Developer Academy open days (100+ people) and at
+        Campus Party Northeast. Projetão at Porto Digital: greatest market potential award.
+      </span>
     </p>
   </div>
 </section>
@@ -209,8 +427,8 @@
 <!-- ───────────────────────── CONTACT ───────────────────────── -->
 <section class="section contact" id="contact">
   <div class="wrap narrow reveal">
-    <p class="kicker">Contact</p>
-    <h2 class="big">Let's talk.</h2>
+    <p class="kicker"><span lang="pt-BR">Contato</span><span lang="en">Contact</span></p>
+    <h2 class="big"><span lang="pt-BR">Vamos conversar.</span><span lang="en">Let's talk.</span></h2>
     <div class="contact-links">
       <a href="mailto:lucasddmc@outlook.com">lucasddmc@outlook.com</a>
       <a href="https://www.linkedin.com/in/lucas-carvalho-computer-science" target="_blank" rel="noopener">LinkedIn ↗</a>
@@ -223,10 +441,10 @@
 </main>
 
 <footer class="footer">
-  <span>Recife, Pernambuco · Brazil</span>
+  <span><span lang="pt-BR">Recife, Pernambuco · Brasil</span><span lang="en">Recife, Pernambuco · Brazil</span></span>
   <span id="year"></span>
 </footer>
 
-<script src="main.js" defer></script>
+<script src="main.js?v=20261114" defer></script>
 </body>
 </html>
