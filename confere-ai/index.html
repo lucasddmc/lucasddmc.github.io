@@ -71,12 +71,12 @@
     </div>
     <p class="muted app-note">
       <span lang="pt-BR">
-        A demonstração roda só com as regras até um modelo passar na mesma avaliação, e
-        pode levar um minuto para acordar. Teste com uma mensagem inventada.
+        A demonstração usa o Jev para decidir e o Claude Haiku só para a frase que descreve a
+        mensagem, com as regras como rede de segurança, e pode levar um minuto para acordar. Teste com uma mensagem inventada.
       </span>
       <span lang="en">
-        The demo runs on the rules until a model passes the same evaluation, and it
-        may take a minute to wake up. Try it with a made-up message.
+        The demo uses Jev to decide and Claude Haiku only for the sentence that describes the
+        message, with the rules as a safety net, and it may take a minute to wake up. Try it with a made-up message.
       </span>
     </p>
   </div>
@@ -87,14 +87,14 @@
   <div class="wrap narrow">
     <p class="kicker reveal"><span lang="pt-BR">Como funciona</span><span lang="en">How it works</span></p>
     <div class="card glass reveal">
-      <h2><span lang="pt-BR">Uma chamada ao modelo, bem cercada</span><span lang="en">One model call, boxed in</span></h2>
+      <h2><span lang="pt-BR">Dois modelos, bem cercados</span><span lang="en">Two models, boxed in</span></h2>
       <ol class="list">
         <li><span lang="pt-BR"><strong>Limpar.</strong> A entrada é cortada em 2.000 caracteres.</span><span lang="en"><strong>Clean.</strong> The input is cut to 2,000 characters.</span></li>
         <li><span lang="pt-BR"><strong>Apagar.</strong> Telefones, CPF, números de cartão, e-mails e links viram marcas antes de qualquer análise.</span><span lang="en"><strong>Erase.</strong> Phone numbers, CPF, card numbers, e-mails and links are replaced by markers before any analysis.</span></li>
-        <li><span lang="pt-BR"><strong>Ler.</strong> Uma chamada ao LLM com saída estruturada escolhe, em listas fechadas, a rota, o tipo de golpe, os sinais de alerta e o nível de alerta, e escreve uma frase curta. A mensagem encaminhada entra como dado, nunca como instrução. As regras também leem a mensagem, sempre.</span><span lang="en"><strong>Read.</strong> One LLM call with structured output picks a route, a scam type, warning signs and an alert level from closed lists, and writes one short sentence. The forwarded message goes in as data, never as instructions. The rules read it too, every time.</span></li>
+        <li><span lang="pt-BR"><strong>Ler.</strong> Uma chamada ao Jev, um modelo de decisão, responde perguntas fechadas: a rota, o tipo de golpe e, para cada um dos 19 sinais de alerta, a probabilidade de ele estar na mensagem; conta o sinal com probabilidade de 0,5 ou mais. O Jev não escreve texto; em paralelo, o Claude Haiku 5.5 escreve uma frase dizendo o que a mensagem pede, sem ver a decisão. A mensagem encaminhada entra como dado, nunca como instrução. As regras também leem a mensagem, sempre.</span><span lang="en"><strong>Read.</strong> One call to Jev, a decision model, answers closed questions: the route, the scam type and, for each of 19 warning signs, the probability that it is in the message; a sign counts at 0.5 or more. Jev writes no text; in parallel, Claude Haiku 5.5 writes one sentence saying what the message asks for, without seeing the decision. The forwarded message goes in as data, never as instructions. The rules read it too, every time.</span></li>
         <li><span lang="pt-BR"><strong>Montar.</strong> A resposta é montada com texto curado: os sinais, como conferir, a regra de ouro.</span><span lang="en"><strong>Compose.</strong> The answer is built from curated text: the signs, how to check, the golden rule.</span></li>
-        <li><span lang="pt-BR"><strong>Validar.</strong> Tudo o que tranquiliza ("é seguro", "pode pagar") ou cita um contato fora da lista aprovada é descartado.</span><span lang="en"><strong>Validate.</strong> Anything that reassures ("it's safe", "you can pay") or names a contact outside the approved list is thrown out.</span></li>
-        <li><span lang="pt-BR"><strong>Cair nas regras.</strong> Se o modelo falha, demora demais ou bate no teto diário, ou se a resposta não passa na validação, as regras respondem. Emergências sempre passam pelas regras, que mandam ligar para o 190.</span><span lang="en"><strong>Fall back.</strong> If the model fails, times out or hits the daily cap, or the answer fails validation, the rules answer. Emergencies always go through the rules, which send people to 190.</span></li>
+        <li><span lang="pt-BR"><strong>Validar.</strong> Tudo o que tranquiliza ("é seguro", "pode pagar") ou cita um contato fora da lista aprovada é descartado. A frase do Haiku que não passa sai da resposta.</span><span lang="en"><strong>Validate.</strong> Anything that reassures ("it's safe", "you can pay") or names a contact outside the approved list is thrown out. A Haiku sentence that fails is dropped from the answer.</span></li>
+        <li><span lang="pt-BR"><strong>Cair nas regras.</strong> Se o Jev falha ou demora demais, ou se a resposta não passa na validação, as regras respondem. Se a frase falha ou bate no teto diário, a resposta sai sem ela. Emergências sempre passam pelas regras, que mandam ligar para o 190.</span><span lang="en"><strong>Fall back.</strong> If Jev fails or times out, or the answer fails validation, the rules answer. If the sentence fails or hits the daily cap, the answer goes out without it. Emergencies always go through the rules, which send people to 190.</span></li>
       </ol>
     </div>
   </div>
@@ -135,6 +135,35 @@
           written by other people.
         </span>
       </p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── OUTSIDE TEST ───────────────────────── -->
+<section class="section" id="outside-test">
+  <div class="wrap narrow">
+    <div class="card glass reveal">
+      <h2><span lang="pt-BR">Um segundo teste, com mensagens de outras pessoas</span><span lang="en">A second test, on other people's messages</span></h2>
+      <p>
+        <span lang="pt-BR">
+          Os 120 casos próprios foram escritos pela mesma autoria das regras, o que favorece as
+          regras. Por isso rodamos regras, Jev e Claude Haiku 5.5 em 4.561 mensagens feitas por
+          outras pessoas, com o critério escrito antes: 2.000 mensagens brasileiras sintéticas e
+          2.561 SMS reais de Moçambique.
+        </span>
+        <span lang="en">
+          Our own 120 cases were written by the same author as the rules, which favours the
+          rules. So we ran the rules, Jev and Claude Haiku 5.5 on 4,561 messages built by
+          others, with the criterion written first: 2,000 synthetic Brazilian messages and
+          2,561 real SMS from Mozambique.
+        </span>
+      </p>
+      <ul class="list">
+        <li><span lang="pt-BR"><strong>Mensagens brasileiras.</strong> As regras dão alerta em 99,6% dos golpes, mas chamam metade das mensagens verdadeiras (49,9%) de "tem cara de golpe". O Jev mantém 99,5% dos golpes com alerta e baixa esse falso alarme para 6,9%; o Haiku, para 27,8%.</span><span lang="en"><strong>Brazilian messages.</strong> The rules flag 99.6% of scams but call half of the genuine messages (49.9%) "looks like a scam". Jev keeps 99.5% of scams flagged and cuts that false alarm to 6.9%; Haiku to 27.8%.</span></li>
+        <li><span lang="pt-BR"><strong>SMS reais de Moçambique.</strong> As regras pegam 13,9% dos golpes; o Jev, 77,0%; o Haiku, 94,2%. Ali os dois modelos dão mais falso alarme que as regras (15,0% e 23,3%, contra 12,4%).</span><span lang="en"><strong>Real SMS from Mozambique.</strong> The rules catch 13.9% of scams; Jev 77.0% and Haiku 94.2%. There both models raise more false alarms than the rules (15.0% and 23.3%, against 12.4%).</span></li>
+        <li><span lang="pt-BR"><strong>Qual roda na demo.</strong> Os dois passaram. O desempate escrito antes apontava o Haiku, por 4 golpes em 800; escolhemos o Jev depois de ver os resultados, pelo falso alarme muito menor e porque ele não escreve texto. A escolha está registrada como desvio do plano.</span><span lang="en"><strong>Which one runs.</strong> Both passed. The tie-break written before the runs pointed to Haiku, by 4 scams out of 800; we chose Jev after seeing the results, for its far fewer false alarms and because it writes no text. That choice is recorded as a departure from the plan.</span></li>
+        <li><span lang="pt-BR"><strong>A frase.</strong> O Haiku escreve só a frase que descreve a mensagem. Na primeira rodada, o validador cortou 13 de 90 frases nos casos próprios, quase todas por valores escritos sem "R$". Com o prompt corrigido, numa amostra nova de 100 mensagens por base, cortou 2,1% e 1,1%, e nenhuma resposta tranquilizou.</span><span lang="en"><strong>The sentence.</strong> Haiku only writes the sentence that describes the message. In the first round the validator cut 13 of 90 sentences on our own cases, almost all for amounts written without "R$". With the prompt fixed, on a fresh sample of 100 messages per base, it cut 2.1% and 1.1%, and no answer reassured.</span></li>
+      </ul>
     </div>
   </div>
 </section>

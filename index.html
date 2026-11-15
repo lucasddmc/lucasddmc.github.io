@@ -129,28 +129,31 @@
         </p>
         <p>
           <span lang="pt-BR">
-            Uma chamada ao LLM lê a mensagem e escolhe em listas fechadas: rota, tipo de
-            golpe, sinais de alerta. A resposta é texto curado mais uma frase do modelo, e
-            um validador descarta tudo o que tranquiliza ou cita um contato fora da lista
-            aprovada. As rotas críticas ficam com as regras.
+            Um modelo de decisão (o Jev, da TypeSafe) lê a mensagem e responde perguntas
+            fechadas: a rota, o tipo de golpe e a probabilidade de cada sinal de alerta. O
+            Claude Haiku escreve só uma frase dizendo o que a mensagem pede, sem decidir nada. O
+            resto da resposta é texto curado, um validador descarta tudo o que tranquiliza ou
+            cita um contato fora da lista aprovada, e as rotas críticas ficam com as regras.
           </span>
           <span lang="en">
-            One LLM call reads the message into closed lists: route, scam type,
-            warning signs. The answer is curated text plus one sentence from the
-            model, and a validator throws out anything that reassures or names a
-            contact outside the approved list. Rules handle the critical routes.
+            A decision model (Jev, by TypeSafe) reads the message and answers closed
+            questions: the route, the scam type and a probability for each warning sign.
+            Claude Haiku writes only one sentence saying what the message asks for, and decides
+            nothing. The rest of the answer is curated text, a validator throws out anything
+            that reassures or names a contact outside the approved list, and rules handle
+            the critical routes.
           </span>
         </p>
         <p class="muted">
           <span lang="pt-BR">
-            O teste pré-registrado exigia que o modelo explicasse melhor do que regras
-            simples. Não explicou (+3,8 pontos contra uma meta de +15), então ficou só com
-            o trabalho em que ganhou: ler a mensagem.
+            Em 2.000 mensagens brasileiras feitas por outras pessoas, manteve o alerta em 99,5%
+            dos golpes e baixou o falso "tem cara de golpe" nas verdadeiras de 50% (regras)
+            para 7%. Em SMS reais de Moçambique, pegou 77% dos golpes, contra 14% das regras.
           </span>
           <span lang="en">
-            The pre-registered test said the model had to explain better than plain
-            rules. It didn't (+3.8 points against a +15 bar), so it kept only the job
-            it did win: reading the message.
+            On 2,000 Brazilian messages written by others, it kept 99.5% of scams flagged
+            and cut false "looks like a scam" alarms on genuine ones from 50% (rules) to 7%.
+            On real SMS from Mozambique it caught 77% of scams, against 14% for the rules.
           </span>
         </p>
         <p class="muted"><span lang="pt-BR">Protótipo de pesquisa, ainda não testado com pessoas.</span><span lang="en">Research prototype, not yet tested with people.</span></p>
